@@ -1,67 +1,110 @@
-{{/*
-  MODERN HEADER for "CareerCompass" - Paste this into layouts/partials/site-header.html
-*/}}
-
-<header 
-  style="
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #ffffff;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  "
->
-  
-  {{/* --- LOGO & SITE NAME --- */}}
-  <a href="{{ .Site.BaseURL }}" style="text-decoration: none; display: flex; align-items: center;">
-    {{/* Simple SVG Compass Icon - The Logo */}}
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="28" 
-      height="28" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="#007bff" 
-      stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round" 
-      style="margin-right: 12px;"
-    >
-      <circle cx="12" cy="12" r="10"></circle>
-      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-    </svg>
+<header style="background-color: #ffffff; border-bottom: 1px solid #e5e7eb; padding: 0 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 70px; max-width: 1200px; margin: 0 auto;">
     
-    {{/* Site Name */}}
-    <span style="font-size: 24px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.5px;">
-      CareerCompass
-    </span>
-  </a>
+    <!-- === MODIFIED: SITE BRANDING WITH SVG LOGO === -->
+    <a href="{{ .Site.BaseURL }}" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+      
+      <!-- Your SVG Compass Icon -->
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="28" 
+        height="28" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="#2563eb"  
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+      </svg>
 
-  {{/* --- NAVIGATION MENU --- */}}
-  {{ if .Site.Menus.main }}
-    <nav>
-      {{ range .Site.Menus.main }}
-        <a 
-          href="{{ .URL | relURL }}" 
-          style="
-            text-decoration: none;
-            color: #333333;
-            font-size: 16px;
-            font-weight: 500;
-            margin-left: 30px;
-            padding-bottom: 5px;
-            transition: color 0.2s ease;
-            border-bottom: 2px solid transparent; /* Placeholder for hover effect */
-          "
-          onmouseover="this.style.color='#007bff'; this.style.borderBottom='2px solid #007bff';"
-          onmouseout="this.style.color='#333333'; this.style.borderBottom='2px solid transparent';"
-        >
-          {{ .Name }}
-        </a>
-      {{ end }}
+      <!-- Site Title -->
+      <span style="font-size: 1.5rem; font-weight: 700; color: #111827; line-height: 1;">
+        {{ .Site.Title }}
+      </span>
+
+    </a>
+    <!-- === END OF MODIFICATION === -->
+
+    <!-- Main Navigation (Desktop) -->
+    <nav style="display: none;" id="desktop-nav">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 32px;">
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}" 
+             style="color: #374151; text-decoration: none; font-weight: 500; position: relative; padding: 8px 0; transition: color 0.3s ease;"
+             onmouseover="this.style.color='#1d4ed8';"
+             onmouseout="this.style.color='#374151';">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
     </nav>
-  {{ end }}
+    
+    <!-- Hamburger Menu Button (Mobile) -->
+    <button id="menu-toggle" aria-label="Open main menu" style="background: none; border: none; padding: 0; cursor: pointer; color: #111827;">
+      <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 28px; height: 28px; display: block;">
+        <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
+      </svg>
+      <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 28px; height: 28px; display: none;">
+        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+      </svg>
+    </button>
+  </div>
 </header>
+
+<!-- Mobile Navigation Panel -->
+<nav id="mobile-nav" style="display: none; position: absolute; top: 70px; left: 0; width: 100%; background-color: #ffffff; border-bottom: 1px solid #e5e7eb; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); z-index: 99;">
+  <ul style="list-style: none; margin: 0; padding: 16px;">
+    {{ range .Site.Menus.main }}
+    <li>
+      <a href="{{ .URL }}" style="display: block; padding: 12px 8px; color: #374151; text-decoration: none; font-weight: 500; border-bottom: 1px solid #f3f4f6;">
+        {{ .Name }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>
+
+<!-- JavaScript for Menu Toggle -->
+<script>
+  (function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const desktopNav = document.getElementById('desktop-nav');
+    
+    function handleResize() {
+      if (window.innerWidth >= 768) {
+        desktopNav.style.display = 'block';
+        menuToggle.style.display = 'none';
+        mobileNav.style.display = 'none';
+        hamburgerIcon.style.display = 'block'; // Reset icon state
+        closeIcon.style.display = 'none';
+      } else {
+        desktopNav.style.display = 'none';
+        menuToggle.style.display = 'block';
+      }
+    }
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    menuToggle.addEventListener('click', function () {
+      const isNavVisible = mobileNav.style.display === 'block';
+      if (isNavVisible) {
+        mobileNav.style.display = 'none';
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      } else {
+        mobileNav.style.display = 'block';
+        hamburgerIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+      }
+    });
+  })();
+</script>

@@ -1,0 +1,66 @@
+<footer style="background-color: #ffffff; border-top: 1px solid #e5e7eb; padding: 48px 24px;">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+
+    <!-- Footer Navigation -->
+    <nav style="margin-bottom: 32px;">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+        {{ range .Site.Menus.footer }}
+        <li>
+          <a href="{{ .URL }}" 
+             style="color: #4b5563; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.3s ease;"
+             onmouseover="this.style.color='#1d4ed8';"
+             onmouseout="this.style.color='#4b5563';">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <!-- Social Media Links -->
+    <div style="margin-bottom: 32px; display: flex; justify-content: center; gap: 24px;">
+      {{ range $name, $url := .Site.Params.social }}
+      <a href="{{ $url }}" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         aria-label="{{ $name | title }}"
+         style="color: #6b7280; transition: color 0.3s ease;"
+         onmouseover="this.style.color='#2563eb';"
+         onmouseout="this.style.color='#6b7280';">
+        {{ partial "svg-icon.html" (dict "name" $name) }}
+      </a>
+      {{ end }}
+    </div>
+
+    <!-- Copyright & Branding -->
+    <div style="font-size: 0.875rem; color: #6b7280;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+        
+        <!-- Compass SVG Icon -->
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="20" 
+          height="20" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+
+        <!-- Copyright Text -->
+        <span>
+          © {{ now.Format "2006" }} {{ .Site.Title }}. All Rights Reserved.
+        </span>
+      </div>
+      {{ with .Site.Copyright }}
+      <p style="margin-top: 8px; font-size: 0.8rem; color: #9ca3af;">{{ . | safeHTML }}</p>
+      {{ end }}
+    </div>
+
+  </div>
+</footer>

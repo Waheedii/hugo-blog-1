@@ -5,6 +5,9 @@
     <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -24,9 +27,6 @@
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/kppsc-test-guide-2025/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/public-service-commission/</loc>
