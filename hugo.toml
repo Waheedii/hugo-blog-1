@@ -1,0 +1,25 @@
+theme = "ananke"
+baseURL = "http://localhost:1313/"
+title = "ourw dream"
+languageCode = "en-us"
+# In your hugo.toml file
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "Blog"
+  url = "/posts/"
+  weight = 20
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 30
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 40

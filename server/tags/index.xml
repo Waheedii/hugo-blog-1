@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My New Hugo Site</title>
+    <link>https://example.org/tags/</link>
+    <description>Recent content in Tags on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KPK Jobs</title>
+      <link>https://example.org/tags/kpk-jobs/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/kpk-jobs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KPPSC</title>
+      <link>https://example.org/tags/kppsc/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/kppsc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Public Service Commission</title>
+      <link>https://example.org/tags/public-service-commission/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/public-service-commission/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test Preparation</title>
+      <link>https://example.org/tags/test-preparation/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/test-preparation/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

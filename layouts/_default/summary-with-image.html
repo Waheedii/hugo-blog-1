@@ -1,0 +1,66 @@
+{{/*
+  FINAL VERSION - Paste this into layouts/partials/summary.html
+  This version GUARANTEES no images will ever appear in the summary.
+*/}}
+
+<article 
+  style="
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    border-left: 5px solid #4a90e2; /* A slightly different blue accent */
+    padding: 24px 28px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-radius: 0 8px 8px 0;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  "
+  onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.12)'; this.style.borderColor='#357abd';"
+  onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.borderColor='#4a90e2';"
+>
+  
+  {{/* --- CATEGORY / TAG --- */}}
+  {{ with .Params.categories }}
+    <p style="margin: 0 0 10px 0; font-size: 13px; font-weight: 600; color: #4a90e2; text-transform: uppercase; letter-spacing: 0.5px;">
+      {{ index . 0 }}
+    </p>
+  {{ end }}
+
+  {{/* --- POST TITLE --- */}}
+  <h2 style="margin: 0 0 12px 0; font-size: 24px; font-weight: 700; line-height: 1.3;">
+    <a href="{{ .Permalink }}" style="text-decoration: none; color: #212529; transition: color 0.2s ease;" onmouseover="this.style.color='#4a90e2';" onmouseout="this.style.color='#212529';">
+      {{ .Title }}
+    </a>
+  </h2>
+
+  {{/* --- GUARANTEED TEXT-ONLY SUMMARY --- */}}
+  {{/* This is the new, improved line that solves the image problem. */}}
+  <div style="margin: 0 0 24px 0; font-size: 16px; color: #6c757d; line-height: 1.6;">
+    {{ .Content | plainify | truncate 150 }}
+  </div>
+
+  {{/* --- METADATA & READ MORE LINK --- */}}
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    {{/* Date of the post */}}
+    <p style="margin: 0; font-size: 14px; color: #888;">
+      {{ .Date.Format "January 2, 2006" }}
+    </p>
+    
+    {{/* Styled 'Read Post' Link */}}
+    <a href="{{ .Permalink }}" style="
+      text-decoration: none;
+      color: #4a90e2;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 16px;
+      border: 1px solid #4a90e2;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    "
+    onmouseover="this.style.backgroundColor='#4a90e2'; this.style.color='#ffffff';"
+    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#4a90e2';"
+    >
+      Read Post &rarr;
+    </a>
+  </div>
+
+</article>
