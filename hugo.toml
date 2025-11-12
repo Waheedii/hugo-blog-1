@@ -1,5 +1,5 @@
 theme = "ananke"
-baseURL = "http://localhost:1313/"
+baseURL = "https://hugo-blog12.netlify.app/"
 title = "ourw dream"
 languageCode = "en-us"
 # In your hugo.toml file
