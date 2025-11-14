@@ -1,0 +1,20 @@
+{{ define "header" }}
+  {{ partial "site-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Thank You!</h1>
+    </header>
+    <article class="post-content">
+      <p>Your message has been successfully sent. We appreciate you contacting us and will get back to you as soon as possible.</p>
+      <p>In the meantime, feel free to browse through our latest articles or follow us on our social media channels.</p>
+      <p><a href="{{ "/" | relURL }}">Return to the homepage</a></p>
+    </article>
+  </main>
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "site-footer.html" . }}
+{{ end }}

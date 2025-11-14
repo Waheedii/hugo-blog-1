@@ -41,7 +41,14 @@
       <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/contact/</guid>
-      <description>&lt;h2 id=&#34;get-in-touch&#34;&gt;Get in Touch&lt;/h2&gt;&#xA;&lt;p&gt;We value our readers and the community we&amp;rsquo;re building. Whether you have a question about an article, a suggestion for a new topic, or a potential partnership opportunity, we are always open to hearing from you.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;The best way to reach us is by filling out the form below.&lt;/strong&gt; We do our best to respond to all inquiries within 2–3 business days.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;contact-form&#34;&gt;Contact Form&lt;/h3&gt;&#xA;&lt;form name=&#34;contact&#34; method=&#34;POST&#34; data-netlify=&#34;true&#34; netlify-honeypot=&#34;bot-field&#34; style=&#34;max-width: 600px; margin: 32px auto; font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif;&#34;&gt;&#xD;&#xA;  &lt;p style=&#34;display:none;&#34;&gt;&#xD;&#xA;    &lt;label&gt;Don’t fill this out if you’re human: &lt;input name=&#34;bot-field&#34; /&gt;&lt;/label&gt;&#xD;&#xA;  &lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;get-in-touch&#34;&gt;Get in Touch&lt;/h2&gt;&#xA;&lt;p&gt;We value our readers and the community we&amp;rsquo;re building. Whether you have a question about an article, a suggestion for a new topic, or a potential partnership opportunity, we are always open to hearing from you.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;The best way to reach us is by filling out the form below.&lt;/strong&gt; We do our best to respond to all inquiries within 2–3 business days.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;contact-form&#34;&gt;Contact Form&lt;/h3&gt;&#xA;&lt;form name=&#34;contact&#34; method=&#34;POST&#34; data-netlify=&#34;true&#34; netlify-honeypot=&#34;bot-field&#34; action=&#34;http://localhost:1313/thank-you&#34; style=&#34;max-width: 600px; margin: 32px auto; font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif;&#34;&gt;&#xD;&#xA;  &lt;input type=&#34;hidden&#34; name=&#34;form-name&#34; value=&#34;contact&#34; /&gt;&#xD;&#xA;  &lt;p style=&#34;display:none;&#34;&gt;&#xD;&#xA;    &lt;label&gt;Don’t fill this out if you’re human: &lt;input name=&#34;bot-field&#34; /&gt;&lt;/label&gt;&#xD;&#xA;  &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thank You</title>
+      <link>http://localhost:1313/thank-you/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/thank-you/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

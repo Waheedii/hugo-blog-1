@@ -13,7 +13,8 @@ We value our readers and the community we're building. Whether you have a questi
 
 ### Contact Form
 
-<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width: 600px; margin: 32px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" style="max-width: 600px; margin: 32px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <input type="hidden" name="form-name" value="contact" />
   <p style="display:none;">
     <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
   </p>
