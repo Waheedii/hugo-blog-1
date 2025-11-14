@@ -2,46 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/blog/guide-to-freelancing-in-pakistan/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/competitive-exams/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/fiverr/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/government-jobs/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/categories/freelancing/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kpk-jobs/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/freelancing/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kppsc/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/categories/online-earning/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/dragon-hent-sd/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/kppsc-test-guide-2025/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/public-service-commission/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/remote-work/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/test-preparation/</loc>
-    <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/upwork/</loc>
+    <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/hello-world/</loc>
     <lastmod>2025-11-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contact/</loc>
   </url>
 </urlset>

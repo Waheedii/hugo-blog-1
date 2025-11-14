@@ -57,8 +57,17 @@
       {{ end }}
     </header>
     <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | compare.Default "serif"}} f4 nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }} {{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pl4-l" "pr4-l" }} w-two-thirds-l">
+      
+      {{/* This is where the main article content is rendered */}}
       {{- .Content -}}
+      
       {{- partials.Include "tags.html" . -}}
+
+      {{/* === NEW: INJECT AUTHOR BOX HERE === */}}
+     {{ if or (eq .Section "blog") (eq .Section "posts") }}
+  {{ partial "author_box.html" . }}
+{{ end }}
+      
       <div class="mt6 instapaper_ignoref">
       {{ if .Site.Config.Services.Disqus.Shortname }}
         {{ template "_internal/disqus.html" . }}

@@ -55,125 +55,161 @@
 	
   </head><body class="ma0 avenir bg-near-white development">
 
+    <header style="background-color: #ffffff; border-bottom: 1px solid #e5e7eb; padding: 0 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);">
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 70px; max-width: 1200px; margin: 0 auto;">
+    
+    
+    <a href="http://localhost:1313/" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+      
+      
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="28" 
+        height="28" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="#2563eb"  
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+      </svg>
+
+      
+      <span style="font-size: 1.5rem; font-weight: 700; color: #111827; line-height: 1;">
+        CareerCompass
+      </span>
+
+    </a>
     
 
-<header 
-  style="
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #ffffff;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  "
->
-  
-  
-  <a href="http://localhost:1313/" style="text-decoration: none; display: flex; align-items: center;">
     
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="28" 
-      height="28" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="#007bff" 
-      stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round" 
-      style="margin-right: 12px;"
-    >
-      <circle cx="12" cy="12" r="10"></circle>
-      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-    </svg>
-    
-    
-    <span style="font-size: 24px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.5px;">
-      CareerCompass
-    </span>
-  </a>
-
-  
-  
-    <nav>
-      
-        <a 
-          href="/" 
-          style="
-            text-decoration: none;
-            color: #333333;
-            font-size: 16px;
-            font-weight: 500;
-            margin-left: 30px;
-            padding-bottom: 5px;
-            transition: color 0.2s ease;
-            border-bottom: 2px solid transparent; /* Placeholder for hover effect */
-          "
-          onmouseover="this.style.color='#007bff'; this.style.borderBottom='2px solid #007bff';"
-          onmouseout="this.style.color='#333333'; this.style.borderBottom='2px solid transparent';"
-        >
-          Home
-        </a>
-      
-        <a 
-          href="/posts/" 
-          style="
-            text-decoration: none;
-            color: #333333;
-            font-size: 16px;
-            font-weight: 500;
-            margin-left: 30px;
-            padding-bottom: 5px;
-            transition: color 0.2s ease;
-            border-bottom: 2px solid transparent; /* Placeholder for hover effect */
-          "
-          onmouseover="this.style.color='#007bff'; this.style.borderBottom='2px solid #007bff';"
-          onmouseout="this.style.color='#333333'; this.style.borderBottom='2px solid transparent';"
-        >
-          Blog
-        </a>
-      
-        <a 
-          href="/about/" 
-          style="
-            text-decoration: none;
-            color: #333333;
-            font-size: 16px;
-            font-weight: 500;
-            margin-left: 30px;
-            padding-bottom: 5px;
-            transition: color 0.2s ease;
-            border-bottom: 2px solid transparent; /* Placeholder for hover effect */
-          "
-          onmouseover="this.style.color='#007bff'; this.style.borderBottom='2px solid #007bff';"
-          onmouseout="this.style.color='#333333'; this.style.borderBottom='2px solid transparent';"
-        >
-          About
-        </a>
-      
-        <a 
-          href="/contact/" 
-          style="
-            text-decoration: none;
-            color: #333333;
-            font-size: 16px;
-            font-weight: 500;
-            margin-left: 30px;
-            padding-bottom: 5px;
-            transition: color 0.2s ease;
-            border-bottom: 2px solid transparent; /* Placeholder for hover effect */
-          "
-          onmouseover="this.style.color='#007bff'; this.style.borderBottom='2px solid #007bff';"
-          onmouseout="this.style.color='#333333'; this.style.borderBottom='2px solid transparent';"
-        >
-          Contact
-        </a>
-      
+    <nav style="display: none;" id="desktop-nav">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 32px;">
+        
+        <li>
+          <a href="/" 
+             style="color: #374151; text-decoration: none; font-weight: 500; position: relative; padding: 8px 0; transition: color 0.3s ease;"
+             onmouseover="this.style.color='#1d4ed8';"
+             onmouseout="this.style.color='#374151';">
+            Home
+          </a>
+        </li>
+        
+        <li>
+          <a href="/posts/" 
+             style="color: #374151; text-decoration: none; font-weight: 500; position: relative; padding: 8px 0; transition: color 0.3s ease;"
+             onmouseover="this.style.color='#1d4ed8';"
+             onmouseout="this.style.color='#374151';">
+            Blog
+          </a>
+        </li>
+        
+        <li>
+          <a href="/about/" 
+             style="color: #374151; text-decoration: none; font-weight: 500; position: relative; padding: 8px 0; transition: color 0.3s ease;"
+             onmouseover="this.style.color='#1d4ed8';"
+             onmouseout="this.style.color='#374151';">
+            About
+          </a>
+        </li>
+        
+        <li>
+          <a href="/contact/" 
+             style="color: #374151; text-decoration: none; font-weight: 500; position: relative; padding: 8px 0; transition: color 0.3s ease;"
+             onmouseover="this.style.color='#1d4ed8';"
+             onmouseout="this.style.color='#374151';">
+            Contact
+          </a>
+        </li>
+        
+      </ul>
     </nav>
-  
+    
+    
+    <button id="menu-toggle" aria-label="Open main menu" style="background: none; border: none; padding: 0; cursor: pointer; color: #111827;">
+      <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 28px; height: 28px; display: block;">
+        <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
+      </svg>
+      <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 28px; height: 28px; display: none;">
+        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"></path>
+      </svg>
+    </button>
+  </div>
 </header>
+
+
+<nav id="mobile-nav" style="display: none; position: absolute; top: 70px; left: 0; width: 100%; background-color: #ffffff; border-bottom: 1px solid #e5e7eb; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); z-index: 99;">
+  <ul style="list-style: none; margin: 0; padding: 16px;">
+    
+    <li>
+      <a href="/" style="display: block; padding: 12px 8px; color: #374151; text-decoration: none; font-weight: 500; border-bottom: 1px solid #f3f4f6;">
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="/posts/" style="display: block; padding: 12px 8px; color: #374151; text-decoration: none; font-weight: 500; border-bottom: 1px solid #f3f4f6;">
+        Blog
+      </a>
+    </li>
+    
+    <li>
+      <a href="/about/" style="display: block; padding: 12px 8px; color: #374151; text-decoration: none; font-weight: 500; border-bottom: 1px solid #f3f4f6;">
+        About
+      </a>
+    </li>
+    
+    <li>
+      <a href="/contact/" style="display: block; padding: 12px 8px; color: #374151; text-decoration: none; font-weight: 500; border-bottom: 1px solid #f3f4f6;">
+        Contact
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+
+
+<script>
+  (function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const desktopNav = document.getElementById('desktop-nav');
+    
+    function handleResize() {
+      if (window.innerWidth >= 768) {
+        desktopNav.style.display = 'block';
+        menuToggle.style.display = 'none';
+        mobileNav.style.display = 'none';
+        hamburgerIcon.style.display = 'block'; 
+        closeIcon.style.display = 'none';
+      } else {
+        desktopNav.style.display = 'none';
+        menuToggle.style.display = 'block';
+      }
+    }
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    menuToggle.addEventListener('click', function () {
+      const isNavVisible = mobileNav.style.display === 'block';
+      if (isNavVisible) {
+        mobileNav.style.display = 'none';
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      } else {
+        mobileNav.style.display = 'block';
+        hamburgerIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+      }
+    });
+  })();
+</script>
     <main class="pb7" role="main">
       
   <article class="cf pa3 pa4-m pa4-l">
@@ -232,15 +268,50 @@
   </div>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
-    &copy;  CareerCompass 2025 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
+    <footer style="background-color: #ffffff; border-top: 1px solid #e5e7eb; padding: 48px 24px;">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+
+    
+    <nav style="margin-bottom: 32px;">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+        
+      </ul>
+    </nav>
+
+    
+    <div style="margin-bottom: 32px; display: flex; justify-content: center; gap: 24px;">
+      
+    </div>
+
+    
+    <div style="font-size: 0.875rem; color: #6b7280;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+        
+        
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="20" 
+          height="20" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+
+        
+        <span>
+          © 2025 CareerCompass. All Rights Reserved.
+        </span>
+      </div>
+      
+    </div>
+
   </div>
 </footer>
-
   </body>
 </html>

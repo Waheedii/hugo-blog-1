@@ -1,0 +1,59 @@
+{{/* 
+  Author Box Shortcode
+  - Fetches author data from data/authors.yaml
+  - Usage in Markdown:
+      {{< authorbox >}}             → defaults to "Abdul_Waheed"
+      {{< authorbox author="Abdul_Waheed" >}} → optional author key
+*/}}
+
+{{ $authorID := .Get "author" | default "Abdul_Waheed" }}
+{{ $authorData := index site.Data.authors $authorID }}
+
+{{ if $authorData }}
+<section style="margin-top:64px; padding-top:32px; border-top:1px solid #e5e7eb;">
+  <div style="display:flex; flex-direction:column; gap:24px; background-color:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:24px; align-items:center; text-align:center;">
+
+    {{/* --- Author Avatar --- */}}
+    {{ with $authorData.avatar }}
+    <div>
+      <img 
+        src="{{ . | absURL }}" 
+        alt="{{ $authorData.name }}" 
+        style="width:96px; height:96px; border-radius:50%; object-fit:cover; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+    </div>
+    {{ end }}
+
+    <div style="width:100%;">
+
+      {{/* --- Author Name --- */}}
+      <h3 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size:1.5rem; font-weight:700; color:#111827; margin:0 0 8px 0;">
+        {{ $authorData.name }}
+      </h3>
+
+      {{/* --- Author Bio --- */}}
+      {{ with $authorData.bio }}
+      <p style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#4b5563; line-height:1.6; font-size:1rem; margin:0 0 24px 0; max-width:600px; margin-left:auto; margin-right:auto;">
+        {{ . }}
+      </p>
+      {{ end }}
+
+      {{/* --- Social Media Links --- */}}
+      {{ with $authorData.social }}
+      <div style="display:flex; justify-content:center; gap:20px;">
+        {{ range $name, $url := . }}
+        <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $name | title }}" 
+           style="color:#6b7280; transition: color 0.3s ease;" 
+           onmouseover="this.style.color='#2563eb';" 
+           onmouseout="this.style.color='#6b7280';">
+          {{ partial "svg-icon.html" (dict "name" $name) }}
+        </a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+{{ else }}
+<p style="text-align:center;color:#888;">Author information not available.</p>
+{{ end }}

@@ -2,24 +2,20 @@ theme = "ananke"
 baseURL = "https://hugo-blog12.netlify.app/"
 title = "CareerCompass"
 languageCode = "en-us"
-# In your hugo.toml file
 
-[[menu.main]]
-  name = "Home"
-  url = "/"
-  weight = 10
-
-[[menu.main]]
-  name = "Blog"
-  url = "/posts/"
-  weight = 20
-
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 30
-
-[[menu.main]]
-  name = "Contact"
-  url = "/contact/"
-  weight = 40
+[markup.goldmark.renderer]
+unsafe = true
+[params]
+  author = "Abdul Waheed" 
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
