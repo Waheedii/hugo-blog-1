@@ -2,7 +2,11 @@ theme = "ananke"
 baseURL = "https://hugo-blog12.netlify.app/"
 title = "CareerCompass"
 languageCode = "en-us"
-
+enableRobotsTXT = true
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
 [markup.goldmark.renderer]
 unsafe = true
 [params]
