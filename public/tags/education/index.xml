@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pakistan on CareerCompass</title>
-    <link>http://localhost:1313/tags/pakistan/</link>
-    <description>Recent content in Pakistan on CareerCompass</description>
+    <title>Education on CareerCompass</title>
+    <link>http://localhost:1313/tags/education/</link>
+    <description>Recent content in Education on CareerCompass</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pakistan/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/education/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HEC Degree Attestation: A Complete Step-by-Step Process for 2025</title>
       <link>http://localhost:1313/blog/hec-degree-attestation-process-2025/</link>
