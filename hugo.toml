@@ -1,5 +1,5 @@
 theme = "ananke"
-baseURL = "https://hugo-blog12.netlify.app/"
+baseURL = "https://careercompasspk.netlify.app/"
 title = "CareerCompass"
 languageCode = "en-us"
 enableRobotsTXT = true
