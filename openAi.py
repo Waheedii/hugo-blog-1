@@ -1,4 +1,4 @@
-# openAi.py - A "Human-in-the-Loop" Multi-Agent Content Pipeline
+# openAi.py - A "Human-in-the-Loop" Multi-Agent Content Pipeline (Editor Removed)
 
 import os
 import json
@@ -7,10 +7,6 @@ import time
 import frontmatter
 from datetime import datetime
 import google.generativeai as genai
-# Note: huggingface_hub is required if you use Llama as the editor.
-# Remove it if you use Gemini for everything.
-from huggingface_hub import InferenceClient
-
 
 # --- Import our settings from the config file ---
 import config
@@ -28,17 +24,13 @@ def load_prompt_template(filepath: str) -> str:
 # --- INITIALIZATION & CONSTANTS ---
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 WRITER_PROMPT_TEMPLATE_PATH = os.path.join(SCRIPT_DIR, config.PROMPT_TEMPLATE_FILE)
-EDITOR_PROMPT_TEMPLATE_PATH = os.path.join(SCRIPT_DIR, config.EDITOR_PROMPT_TEMPLATE_FILE)
 TOPICS_FILE_PATH = os.path.join(SCRIPT_DIR, config.TOPICS_FILE)
 LINK_MAP_FILE_PATH = os.path.join(SCRIPT_DIR, config.LINK_MAP_FILE)
 
 WRITER_PROMPT_TEMPLATE = load_prompt_template(WRITER_PROMPT_TEMPLATE_PATH)
-EDITOR_PROMPT_TEMPLATE = load_prompt_template(EDITOR_PROMPT_TEMPLATE_PATH)
 
 # Configure APIs
 genai.configure(api_key=config.GEMINI_API_KEY)
-# Initialize the HF client if you are using Llama as your editor
-HF_CLIENT = InferenceClient(token=config.HF_API_TOKEN) 
 
 # Create directories
 os.makedirs(config.OUTPUT_DIR, exist_ok=True)
@@ -61,38 +53,22 @@ def generate_article_draft(article_data: dict) -> str:
         print(f"⚠️ Gemini draft generation failed: {e}")
         return None
 
-# --- AGENT 2: The Editor (Llama 3.1) ---
-def refine_article(draft_content: str, article_data: dict) -> str:
-    """Sends the draft to an Editor AI for refinement and image placeholder insertion."""
-    print("🧐 Sending draft to Editor (Llama 3.1) for refinement...")
-    try:
-        system_prompt = EDITOR_PROMPT_TEMPLATE.format(topic=article_data["topic"])
-        completion = HF_CLIENT.chat.completions.create(
-            model=config.EDITOR_MODEL,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": draft_content}
-            ],
-            max_tokens=4096
-        )
-        return completion.choices[0].message.content
-    except Exception as e:
-        print(f"⚠️ Llama refinement failed: {e}")
-        return None
-
-# --- AGENT 3: The Producer (Python Script Functions) ---
-def process_image_placeholders(refined_content: str, slug: str) -> (str, list):
+# --- AGENT 2: The Producer (Python Script Functions) ---
+def process_image_placeholders(content: str, slug: str) -> (str, list):
     """
-    Finds image placeholders and transforms them into a human-readable "To-Do" list
-    and Hugo shortcode placeholders.
+    Finds image placeholders in the content, transforms them into Hugo shortcodes,
+    and creates a human-readable "To-Do" list.
     Returns a tuple: (processed_content, image_todo_list)
     """
     print("🖼️  Processing dynamic image placeholders for manual insertion...")
+    # NOTE: This pattern assumes the Writer (Gemini) can produce placeholders
+    # in the format [IMAGE|image-id|A descriptive prompt for the image].
+    # You may need to adjust your writer's prompt to ensure it does this.
     placeholder_pattern = re.compile(r'\[IMAGE\|([\w-]+)\|([^\]]+)\]')
-    placeholders = placeholder_pattern.findall(refined_content)
+    placeholders = placeholder_pattern.findall(content)
     
     image_todo_list = []
-    processed_content = refined_content
+    processed_content = content
 
     if not placeholders:
         print("➡️ No dynamic image placeholders found.")
@@ -208,11 +184,12 @@ def main():
 
     article_data = topics[0]
     print("----------------------------------------------------")
-    print(f"🚀 Starting Human-in-the-Loop generation for: {article_data['title']}")
+    print(f"🚀 Starting streamlined generation for: {article_data['title']}")
 
     # === Stage 1: Writer ===
     draft_content = generate_article_draft(article_data)
-    if not draft_content: print("🔥 Initial draft generation failed. Aborting."); return
+    if not draft_content: 
+        print("🔥 Initial draft generation failed. Aborting."); return
     try:
         draft_filename = f"{datetime.now().strftime('%Y-%m-%d')}-{article_data['slug']}.md"
         draft_filepath = os.path.join(config.DRAFTS_DIR, draft_filename)
@@ -221,13 +198,11 @@ def main():
     except Exception as e:
         print(f"⚠️ Could not save draft file: {e}")
 
-    # === Stage 2: Editor ===
-    refined_content_with_placeholders = refine_article(draft_content, article_data)
-    if not refined_content_with_placeholders: print("🔥 Article refinement failed. Aborting."); return
+    # === Stage 2: Producer (Directly using the writer's draft) ===
+    print("✅ Editor step removed. Proceeding directly to Producer.")
+    final_article_body, image_todo_list = process_image_placeholders(draft_content, article_data['slug'])
 
-    # === Stage 3: Producer ===
-    final_article_body, image_todo_list = process_image_placeholders(refined_content_with_placeholders, article_data['slug'])
-
+    # Add Hero Image to To-Do list and content
     hero_filename = f"{article_data['slug']}-hero.jpg"
     hero_hugo_path = f"/images/{hero_filename}"
     hero_prompt = article_data.get("image_prompt", f"A professional hero image for a blog post about {article_data['topic']}, photorealistic, detailed")
@@ -236,12 +211,16 @@ def main():
     hero_shortcode = f'{{{{< figure src="{hero_hugo_path}" caption="Overview of {article_data["topic"]}" >}}}}\n\n'
     final_content_with_hero = hero_shortcode + final_article_body
 
+    # Save the final processed article
     filepath = save_article(final_content_with_hero, article_data, image_todo_list)
-    if not filepath: print("🔥 Saving the final article failed. Aborting."); return
+    if not filepath: 
+        print("🔥 Saving the final article failed. Aborting."); return
     
+    # Apply SEO and linking
     apply_internal_links(filepath, article_data['slug'])
     update_link_map(article_data)
 
+    # Update the topics queue
     remaining_topics = topics[1:]
     with open(TOPICS_FILE_PATH, "w", encoding="utf-8") as f:
         json.dump(remaining_topics, f, indent=2, ensure_ascii=False)
